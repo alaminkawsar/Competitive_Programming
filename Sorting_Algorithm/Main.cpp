@@ -8,7 +8,7 @@ class Bubble_Sort
 private:
     /* data */
 public:
-    void bubble_sort(int ar[],int n){
+    void bubble_sort(int *ar,int n){
         for(int i=0;i<n;i++){
             for(int j=i+1;j<n;j++){
                 if(ar[i]>ar[j]) swap(ar[i],ar[j]);
@@ -17,17 +17,18 @@ public:
     }
 };
 
-void solve()
-{
-    
-}
 int main()
 {
-    //ios_base::sync_with_stdio(false);
-    //cin.tie(NULL);
-    int t=1,ts=0; //cin>>t;
-    while(t--){
-        solve();
+    int n; cin>>n;
+    int ar[n+5];
+    for(int i=0;i<n;i++){
+        cin>>ar[i];
     }
+    Bubble_Sort Bsort = Bubble_Sort();
+    Bsort.bubble_sort(ar,n);
+    for(int i=0;i<n;i++){
+        printf("%d ",ar[i]);
+    }
+
     return 0;
 }
